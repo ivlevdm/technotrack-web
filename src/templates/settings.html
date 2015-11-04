@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block right %}
+    <div style="position: relative;">
+        <h1>Settings: {{ user.name }}</h1>
+        <form action="#TODO" method="POST">
+            <label for="login">Login</label>
+            <br>
+            <input id="login" placeholder="{{ user.login }}" type="text" data-max-length="150"
+                   data-min-length="8"
+                   tabindex="100"
+                   maxlength="300" style="width: 300px;">
+            <br>
+            <label for="Email">Email</label>
+            <br>
+            <input id="Email" placeholder="{{ user.email }}" type="text" data-max-length="150"
+                   tabindex="100"
+                   maxlength="300" style="width: 300px;">
+            <label for="NickName">NickName</label>
+            <br>
+            <input id="NickName" type="text" placeholder="{{ user.name }}" data-max-length="150" data-min-length="15"
+                   tabindex="100"
+                   maxlength="300" style="width: 300px;">
+            <label for="UploadAvatar">Upload avatar</label>
+            <br>
+            <img id="UploadAvatar" src="{{ user.img }}" style="width: 20%;">
+            <br>
+            <input type="text" placeholder="C:/src/images/" width="80px"/>
+            <button type="button" class="btn btn-success">Choose</button>
+
+            <div>
+                <button type="button" class="btn btn-success btn-md">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

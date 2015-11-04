@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block right %}
+    {% include 'question_form.html' %}
+    <hr>
+    <h2>Answers:</h2>
+    {% for answer in answers %}
+        {% include 'answer_form.html' %}
+    {% endfor %}
+    <hr>
+    <div style="margin-bottom: 20px; margin-top:20px;">
+        <div style="margin-top: 20px;margin-bottom: 20px;">
+            <textarea id="wmd-input" class="wmd-input processed" data-min-length=""
+                      placeholder="Enter your answer here"
+                      tabindex="101" rows="5"
+                      cols="80" name="post-text"></textarea>
+        </div>
+        <button type="button" class="btn btn-success btn-md">Answer</button>
+
+    </div>
+{% endblock %}

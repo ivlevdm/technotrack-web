@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block right %}
+    <h1>Ask Question</h1>
+    <div style="margin-top:20px; margin-bottom: 20px; ">
+        <label for="title" style="margin-right: 6px">
+            Title
+        </label>
+        <input id="title" type="text" data-max-length="150" data-min-length="15"
+               placeholder="Your question" tabindex="100"
+               maxlength="300" name="title" autocomplete="off" style="width: 300px;">
+    </div>
+    <div style="margin-top: 20px;margin-bottom: 20px;">
+        <label for="wmd-input" style="float: left; margin-right: 9px">
+            Text
+        </label>
+        <textarea id="wmd-input" class="wmd-input processed" data-min-length="" tabindex="101" rows="15"
+                  cols="80" name="post-text"></textarea>
+    </div>
+    <div style="margin-top: 20px; margin-bottom: 20px;">
+        <label for="tag">
+            Тags
+        </label>
+        <input id="tag" type="text" data-max-length="150" data-min-length="15"
+               placeholder="moon, park, puzzle" tabindex="100"
+               maxlength="300" name="title" autocomplete="off" style="width: 300px;">
+    </div>
+    <div>
+        <button type="button" class="btn btn-success btn-md">Ask Question</button>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block right %}
+    <div style="margin-bottom: 20px;">
+        <h1><b>Tag:</b> {{ tag }}</h1>
+        <input type="text" class="form-control" placeholder="Search...">
+    </div>
+    {% for question in questions %}
+        {% include 'question_form.html' %}
+    {% endfor %}
+    {% include 'pagination.html' %}
+{% endblock %}

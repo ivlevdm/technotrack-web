@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AskDewil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap-tag-cloud.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/custom.css" %}">
+    <script src="{% static "bootstrap/js/jquery-1.11.3.js" %}"></script>
+    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "bootstrap/js/bootstrap-tag-cloud.js" %}"></script>
+</head>
+<body>
+<!-- Head -->
+    <nav class="navbar navbar-inverse"><!-- page content end -->
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">AskDewil</a>
+            </div>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" style="border-radius: 15px;">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <div class="navbar-btn navbar-left">
+                <button type="submit" class="btn btn-default" id="ask-btn">ASK!</button>
+            </div>
+            <script type="text/javascript">
+                document.getElementById("ask-btn").onclick = function () {
+                    location.href = "{% url 'new-question:ask' %}";
+                };
+            </script>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{% url 'login:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- head end -->
+
+<!-- page content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block right %}
+            {% endblock %}
+        </div>
+        <div class="col-md-4">
+            <h1>Popular Tags</h1>
+            <ul id="tag-cloud">
+                {% for tag in popular_tags %}
+                    <li class="tag-cloud">{{ tag.name }}</li>
+                {% endfor %}
+            </ul>
+            <h1>Popular Members</h1>
+            {% for member in popular_members%}
+                <p><a class="members">{{ member.name }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- page content end -->
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">(c) 2015</p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<div class="questionForm">
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{{ question.user.img }}">
+            <p></p>
+            <button type="button" class="btn btn-default">-</button>
+            <span>{{ question.popularity }}</span>
+            <button type="button" class="btn btn-default">+</button>
+        </div>
+        <div class="col-md-10">
+            <div class="inForm">
+                <h2><a href="{{ question.ref }}">{{ question.title }}</a></h2>
+                <p class="lead">
+                    {% if is_short %}
+                        {{ question.short_desc }}
+                    {% else %}
+                        {{ question.desc }}
+                    {% endif %}
+                </p>
+                {% if is_short %}
+                    <a href="{{ question.ref_ans }}"><u>answer ({{ question.ans_cnt }})</u></a>
+                {% endif %}
+                Tags:
+                {% for tag in question.tags %}
+                    <a href="{{ tag.ref }}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

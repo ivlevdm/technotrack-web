@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block right %}
+    <h1>Log In</h1>
+    <br>
+    <form action="#TODO" method="POST">
+        <fieldset>
+            <div class="row">
+                <div class="col-sm-12 col-md-10 ">
+                    <div class="form-group">
+                        <label>Login:</label>
+                        <div class="input-group"> <span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i> </span>
+                            <input class="form-control" placeholder="Username" name="loginname" type="text"
+                                   autofocus style="width: 300px;" data-min-length="8"  maxlength="300"
+                                   data-max-length="150">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"> <i class="glyphicon glyphicon-lock"></i> </span>
+                            <input class="form-control" placeholder="Password" name="password" type="password" value=""
+                                   style="width: 300px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Log In">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <br><br>
+    <a href="#">create new account</a>
+    <br><br><br><br><br>
+{% endblock %}

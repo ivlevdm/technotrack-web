@@ -18,4 +18,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^popular/', include('questions.urls', namespace='popular-question', app_name='question')),
+    url(r'^ask/', include('questions.urls', namespace='new-question', app_name='question')),
+    url(r'^answers/', include('questions.urls', namespace='question', app_name='question')),
+    url(r'^login/', include('login.urls', namespace='login', app_name='login')),
+    url(r'^registration/', include('login.urls', namespace='login', app_name='login')),
+    url(r'^$', include('questions.urls', namespace='new-question', app_name='question')),
 ]
