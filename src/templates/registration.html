@@ -9,7 +9,7 @@
                         <div class="form-group">
                             <label>Login:</label>
                             <div class="input-group"> <span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i> </span>
-                                <input class="form-control" placeholder="{{ user.login }}" name="loginname" type="text"
+                                <input class="form-control" placeholder="Username" name="loginname" type="text"
                                        autofocus style="width: 300px;" data-min-length="8"  maxlength="300"
                                        data-max-length="150">
                             </div>
@@ -17,7 +17,7 @@
                         <div class="form-group">
                             <label>Email:</label>
                             <div class="input-group"> <span class="input-group-addon" id="basic-addon1">@</span>
-                                <input class="form-control" placeholder="{{ user.email }}" name="email" type="text"
+                                <input class="form-control" placeholder="Email" name="email" type="text"
                                        autofocus style="width: 300px;" data-min-length="8"  maxlength="300"
                                        data-max-length="150">
                             </div>
@@ -25,9 +25,26 @@
                         <div class="form-group">
                             <label>NickName :</label>
                             <div class="input-group"> <span class="input-group-addon"> <i class="glyphicon glyphicon-sunglasses"></i> </span>
-                                <input class="form-control" placeholder="{{ user.name }}" name="nickname" type="text"
+                                <input class="form-control" placeholder="Your nickname" name="nickname" type="text"
                                        autofocus style="width: 300px;" data-min-length="8"  maxlength="300"
                                        data-max-length="150">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"> <i class="glyphicon glyphicon-lock"></i> </span>
+                                <input class="form-control" placeholder="Password" name="password" type="password" value=""
+                                       style="width: 300px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Repeat password:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"> <i class="glyphicon glyphicon-lock"></i> </span>
+                                <input class="form-control" placeholder="Repeat password" name="repeat-password" type="password" value=""
+                                       style="width: 300px;">
                             </div>
                         </div>
 

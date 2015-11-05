@@ -1,15 +1,13 @@
 {% block pagination %}
 <nav>
     <ul class="pagination">
-        <li class="{% if prev.is_available %}active{% else %}disabled{% endif %}"><a href="{{ prev.ref }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-        {% for page in pagination %}
-            {% if page.is_available %}
-                <li class="active"><a href="{{ page.ref }}">{{ page.name }}<span class="sr-only">(current)</span></a></li>
+        {% for page in pagination.page_range %}
+            {% if page.number == pagingation.cur_number %}
+                <li class="active"><a href="{{ pagination.base_url }}{{ page.number }}">{{ page.number }}<span class="sr-only">(current)</span></a></li>
             {% else %}
-                <li class="active"><a href="{{ page.ref }}">{{ page.name }}</a></li>
+                <li class="active"><a href="{{ pagination.base_url }}{{ page.number }}">{{ page.number }}</a></li>
             {% endif %}
         {% endfor %}
-        <li class="{% if next.is_available %}active{% else %}disabled{% endif %}"><a href="{{ next.ref }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
     </ul>
 </nav>
 {% endblock %}
