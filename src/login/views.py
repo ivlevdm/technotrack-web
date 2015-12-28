@@ -9,4 +9,4 @@ def registration(request):
     return render_to_response('registration.html')
 
 def settings(request):
-    return render_to_response('registration.html')
+    return render_to_response('settings.html')

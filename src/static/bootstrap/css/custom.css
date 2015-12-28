@@ -34,10 +34,10 @@
 .answerForm{
     margin-bottom: 15px;
     font-size: 21px;
-    font-weight: 200;
-    background-color: #c7ddef;
-    padding: 20px 25px;
+    background-color: #cfe2ef;
     border-radius: 6px;
+    border-style: solid;
+    padding-bottom: 20px;
 }
 .answerForm img {
     position: relative;

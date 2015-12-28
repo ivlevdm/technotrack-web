@@ -40,8 +40,20 @@
             </script>
             <div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="{% url 'login:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <button id="usr-btn"><img src="{% static 'logo200.jpg' %}" class="img-rounded" style="height: 45px; width:45px;"></button>
+                        </li>
+                        <script type="text/javascript">
+                                document.getElementById("usr-btn").onclick = function () {
+                                location.href = "{% url 'login:settings' %}";
+                            };
+                        </script>
+                        <li><a href="#TODO"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login:registration' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="{% url 'login:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
